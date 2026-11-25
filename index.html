@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agustín Orellano · Marketing digital y producto web</title>
-<meta name="description" content="Agustín Orellano: estudiante de Marketing Digital que diseña y construye sitios y apps. Perfil, experiencia y últimos proyectos.">
-<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Agustín Orellano · Business Development Manager</title>
+<meta name="description" content="Agustín Orellano: Business Development Manager en Clash Beneficios. Perfil, experiencia y últimos proyectos.">
+<meta name="theme-color" content="#fbfbfd">
+<meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Agustín Orellano">
 <meta property="og:description" content="Marketing digital, diseño y producto web. Perfil, experiencia y últimos proyectos.">
 <meta property="og:type" content="website">
@@ -17,9 +17,7 @@
   --maxw:980px;
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#000;--bg2:#101012;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff}
-}
+:root[data-theme="dark"]{--bg:#000;--bg2:#101012;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;font-size:17px}
@@ -31,7 +29,10 @@ a:hover{text-decoration:underline}
 nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:13px}
 nav .brand{font-weight:600;color:var(--text)}
-nav ul{display:flex;gap:28px;list-style:none}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+.theme{background:none;border:0;cursor:pointer;color:var(--muted);font:inherit;font-size:16px;line-height:1;padding:6px;border-radius:50%}
+.theme:hover{color:var(--text)}
+.theme:focus-visible{outline:2px solid var(--accent)}
 nav ul a{color:var(--muted)}
 nav ul a:hover{color:var(--text);text-decoration:none}
 @media (max-width:560px){nav ul{gap:16px}nav ul li:nth-child(n+4){display:none}}
@@ -91,7 +92,7 @@ section.alt .card{background:var(--card)}
 .p.big{grid-column:1/-1;background:#000;color:#f5f5f7}
 .p.big h3{font-size:clamp(32px,4.5vw,48px)}
 .p.big p,.p.big .tag,.p.big .stack{color:#a1a1a6}
-@media (prefers-color-scheme:dark){.p.big{background:#1c1c1e}}
+:root[data-theme="dark"] .p.big{background:#1c1c1e}
 @media (max-width:760px){.proj{grid-template-columns:1fr}.p{min-height:0}}
 
 /* Contact */
@@ -105,6 +106,7 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
+<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 </head>
 <body>
 
@@ -117,14 +119,15 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
       <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><button class="theme" id="theme" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar tema">☾</button></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero wrap" id="top">
-  <p class="eyebrow rv">Marketing digital · Diseño · Producto web</p>
+  <p class="eyebrow rv">Negocios · Marketing digital · Producto web</p>
   <h1 class="rv">Agustín<br>Orellano.</h1>
-  <p class="lead rv">Convierto ideas en sitios y aplicaciones claras, rápidas y bien pensadas.</p>
+  <p class="lead rv">Convierto oportunidades en soluciones claras, digitales y bien pensadas.</p>
   <div class="cta rv">
     <a class="btn" href="#proyectos">Ver proyectos</a>
     <a class="btn ghost" href="#contacto">Hablemos ›</a>
@@ -134,17 +137,17 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 <section id="sobre-mi" class="alt">
   <div class="wrap">
     <h2 class="rv">Sobre mí.</h2>
-    <p class="sub rv">Estudio, diseño y construyo. Me gusta que lo complejo se sienta simple.</p>
+    <p class="sub rv">Identifico oportunidades, resuelvo problemas reales y construyo soluciones escalables.</p>
     <div class="about">
       <div class="rv">
-        <p>Estudio Marketing Digital en la UAI y trabajo en la intersección entre estrategia, diseño y código: desde la propuesta de valor hasta la página publicada.</p>
-        <p>Uso la IA como parte del taller, no como atajo: me permite iterar más rápido, probar más ideas y entregar productos terminados con criterio propio.</p>
+        <p>Soy Business Development Manager en Clash Beneficios. Trabajo en la intersección entre negocio, marketing, producto y tecnología: desde detectar dónde puede crecer una compañía hasta ver la solución publicada.</p>
+        <p>Además estudio Marketing Digital en la UAI y diseño y construyo sitios y apps por mi cuenta, usando la IA como herramienta de trabajo para iterar más rápido.</p>
       </div>
       <div class="stats rv">
-        <div class="stat"><b>4+</b><span>proyectos recientes publicados o en desarrollo</span></div>
-        <div class="stat"><b>0 → 1</b><span>de la idea al sitio en producción</span></div>
-        <div class="stat"><b>ES · EN</b><span>comunicación en español e inglés</span></div>
-        <div class="stat"><b>100%</b><span>foco en claridad y experiencia de uso</span></div>
+        <div class="stat"><b>2026</b><span>lidero el crecimiento de Clash Beneficios</span></div>
+        <div class="stat"><b>4+</b><span>proyectos web y de producto recientes</span></div>
+        <div class="stat"><b>Remoto</b><span>trabajo con Comercial, Marketing, Producto y Tecnología</span></div>
+        <div class="stat"><b>0 → 1</b><span>de la idea a la solución en producción</span></div>
       </div>
     </div>
   </div>
@@ -155,9 +158,9 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
     <h2 class="rv">Lo que hago.</h2>
     <p class="sub rv">Tres frentes que trabajan juntos.</p>
     <div class="grid">
-      <div class="card rv"><span class="ico">◎</span><h3>Estrategia y marketing</h3><p>Posicionamiento, propuesta de valor, contenidos y análisis de marca para que cada pieza tenga un porqué.</p></div>
-      <div class="card rv"><span class="ico">◐</span><h3>Diseño de interfaz</h3><p>Estética minimalista, tipografía cuidada y jerarquía visual que se lee de un vistazo, en cualquier pantalla.</p></div>
-      <div class="card rv"><span class="ico">⌘</span><h3>Desarrollo web</h3><p>HTML, CSS y JavaScript, además de React y Vite. Sitios estáticos veloces, apps con datos y despliegue en Vercel.</p></div>
+      <div class="card rv"><span class="ico">◎</span><h3>Expansión y alianzas</h3><p>Identificación de mercados y segmentos, y relaciones estratégicas con marcas, franquicias, empresas, entidades financieras y centros comerciales.</p></div>
+      <div class="card rv"><span class="ico">◐</span><h3>Modelos de negocio y producto</h3><p>Propuestas de valor, oportunidades de monetización y conexión entre lo que necesita el cliente y lo que la tecnología puede ofrecer.</p></div>
+      <div class="card rv"><span class="ico">⌘</span><h3>Ecosistema digital</h3><p>Sitio web, CMS, CRM y automatizaciones. También diseño y desarrollo web con HTML, CSS, JavaScript y React.</p></div>
     </div>
   </div>
 </section>
@@ -165,10 +168,15 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 <section id="experiencia" class="alt">
   <div class="wrap">
     <h2 class="rv">Experiencia.</h2>
-    <p class="sub rv">Formación y trabajo real, en orden cronológico inverso.</p>
+    <p class="sub rv">Trabajo y formación, de lo más reciente a lo más antiguo.</p>
     <ol class="tl">
       <li class="rv">
-        <div class="when">2026 · Actualidad</div>
+        <div class="when">Nov 2026 · Actualidad</div>
+        <div><h3>Business Development Manager</h3><div class="org">Clash Beneficios · Remoto, Provincia de Buenos Aires</div>
+        <p>Lidero iniciativas de crecimiento y expansión: desarrollo alianzas estratégicas, diseño nuevas propuestas de valor y modelos de monetización, y conecto las necesidades de los clientes con las capacidades tecnológicas de Clash. Evoluciono el ecosistema digital (sitio web, CMS, CRM y automatizaciones), optimizo procesos comerciales y trabajo con Comercial, Marketing, Producto y Tecnología para convertir ideas en soluciones concretas.</p></div>
+      </li>
+      <li class="rv">
+        <div class="when">2026</div>
         <div><h3>Proyectos de producto web</h3><div class="org">Independiente</div>
         <p>Diseño y desarrollo de landings, una app de entrenamiento y una plataforma B2B, trabajando de punta a punta con IA como herramienta de producción.</p></div>
       </li>
@@ -177,11 +185,6 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
         <div><h3>Licenciatura en Marketing Digital</h3><div class="org">Universidad Abierta Interamericana (UAI)</div>
         <p>Marketing, comportamiento del consumidor, branding y comunicación digital, con trabajos aplicados a marcas reales.</p></div>
       </li>
-      <li class="rv">
-        <div class="when">Para completar</div>
-        <div><h3>Tu cargo o rol anterior</h3><div class="org">Empresa · Ciudad</div>
-        <p>Reemplazá este bloque con una experiencia laboral: qué hiciste y qué resultado lograste.</p></div>
-      </li>
     </ol>
   </div>
 </section>
@@ -189,37 +192,32 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 <section id="proyectos">
   <div class="wrap">
     <h2 class="rv">Lo último.</h2>
-    <p class="sub rv">Cosas en las que trabajé recientemente.</p>
+    <p class="sub rv">Algunos de los proyectos en los que trabajé recientemente.</p>
     <div class="proj">
       <article class="p big rv">
-        <span class="tag">App web · Salud</span>
-        <h3>Training Shot · Rutina L5</h3>
-        <p>Rutinas de gimnasio pensadas para cuidar la zona lumbar y la ATM. Genera la rutina del día, con fichas por ejercicio, registro por serie, temporizador de descanso, sugerencia de progresión y gráfico de avance. Tema claro y oscuro, y datos guardados en el propio navegador.</p>
-        <div class="stack">HTML · CSS · JavaScript · localStorage · Vercel</div>
+        <span class="tag">Producto · Bienestar</span>
+        <h3>Training Shot</h3>
+        <p>Una app de entrenamiento pensada para cuidar la espalda y la mandíbula. Arma la rutina del día, explica cada ejercicio, registra el avance y sugiere cómo progresar, todo con una experiencia simple y cómoda de usar.</p>
       </article>
       <article class="p rv">
-        <span class="tag">Plataforma B2B</span>
+        <span class="tag">Producto · Empresas</span>
         <h3>Data Plus</h3>
-        <p>Demo de interfaz para una plataforma de matchmaking entre empresas, construida como prototipo navegable.</p>
-        <div class="stack">React · Vite</div>
+        <p>Un prototipo de plataforma para conectar empresas entre sí, pensado para validar la idea y mostrar cómo sería la experiencia.</p>
       </article>
       <article class="p rv">
-        <span class="tag">Propuesta de sitio</span>
+        <span class="tag">Marca · Finanzas</span>
         <h3>MODO</h3>
-        <p>Propuesta de sitio web para la billetera de todos los bancos. Trabajo de Marketing Digital en la UAI.</p>
-        <div class="stack">Landing · Diseño · Copy</div>
+        <p>Propuesta de sitio web para la billetera de todos los bancos, con foco en comunicar claramente su propuesta de valor. Trabajo de Marketing Digital en la UAI.</p>
       </article>
       <article class="p rv">
-        <span class="tag">Sitio de marca · Turismo</span>
+        <span class="tag">Marca · Turismo</span>
         <h3>Westur Viajes</h3>
-        <p>Landing y sitio para una agencia de viajes, con panel de administración y contenidos editables.</p>
-        <div class="stack">HTML · CSS · CMS</div>
+        <p>Presencia digital para una agencia de viajes: un sitio claro que presenta la marca y puede mantenerse actualizado fácilmente.</p>
       </article>
       <article class="p rv">
-        <span class="tag">Este sitio</span>
-        <h3>Micrositio personal</h3>
-        <p>La página que estás leyendo: minimalista, liviana, sin dependencias y adaptada a modo claro y oscuro.</p>
-        <div class="stack">HTML · CSS</div>
+        <span class="tag">Personal</span>
+        <h3>Este sitio</h3>
+        <p>Mi carta de presentación: minimalista, liviana y fácil de leer en cualquier pantalla, con modo claro y oscuro.</p>
       </article>
     </div>
   </div>
@@ -230,7 +228,8 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
     <h2 class="rv">Trabajemos juntos.</h2>
     <p class="sub rv">¿Tenés un proyecto, una marca o una idea? Me encantaría escucharla.</p>
     <div class="cta rv">
-      <a class="btn" href="mailto:TU-EMAIL@ejemplo.com">Escribime</a>
+      <a class="btn" href="mailto:agustinorellanogomez@gmail.com">Escribime</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/agust%C3%ADn-orellano-" target="_blank" rel="noopener">LinkedIn ›</a>
       <a class="btn ghost" href="https://github.com/agustinorellano" target="_blank" rel="noopener">GitHub ›</a>
     </div>
   </div>
@@ -241,6 +240,10 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const root=document.documentElement,tb=document.getElementById('theme');
+function paint(){const d=root.dataset.theme==='dark';tb.textContent=d?'☀':'☾';tb.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro')}
+tb.addEventListener('click',()=>{if(root.dataset.theme==='dark'){delete root.dataset.theme;try{localStorage.setItem('theme','light')}catch(e){}}else{root.dataset.theme='dark';try{localStorage.setItem('theme','dark')}catch(e){}}paint()});
+paint();
 </script>
 </body>
 </html>
