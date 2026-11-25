@@ -26,17 +26,25 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-/* Nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:13px}
-nav .brand{font-weight:600;color:var(--text)}
-nav ul{display:flex;gap:28px;list-style:none;align-items:center}
-.theme{background:none;border:0;cursor:pointer;color:var(--muted);font:inherit;font-size:16px;line-height:1;padding:6px;border-radius:50%}
-.theme:hover{color:var(--text)}
-.theme:focus-visible{outline:2px solid var(--accent)}
-nav ul a{color:var(--muted)}
-nav ul a:hover{color:var(--text);text-decoration:none}
-@media (max-width:560px){nav ul{gap:16px}nav ul li:nth-child(n+4){display:none}}
+/* Nav — barra flotante tipo liquid glass */
+nav{position:sticky;top:14px;z-index:10;padding:0 16px;margin-top:14px;pointer-events:none}
+nav .wrap{pointer-events:auto;max-width:860px;padding:8px 10px 8px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;border-radius:999px;
+  background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.42));
+  -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:0 8px 32px rgba(20,30,60,.12),0 1px 2px rgba(20,30,60,.06),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.35)}
+:root[data-theme="dark"] nav .wrap{background:linear-gradient(135deg,rgba(60,60,66,.62),rgba(28,28,30,.45));border-color:rgba(255,255,255,.14);box-shadow:0 8px 32px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14)}
+nav .brand{font-weight:600;color:var(--text);letter-spacing:-.01em}
+nav ul{display:flex;gap:4px;list-style:none;align-items:center}
+nav ul a{display:block;color:var(--muted);padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+nav ul a:hover{color:var(--text);text-decoration:none;background:rgba(120,120,128,.14)}
+.theme{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;cursor:pointer;color:var(--text);font:inherit;font-size:16px;line-height:1;
+  background:rgba(255,255,255,.55);border:1px solid rgba(120,120,128,.3);box-shadow:0 1px 3px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.8);transition:transform .2s,background .2s}
+:root[data-theme="dark"] .theme{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.theme:hover{transform:scale(1.07)}
+.theme:active{transform:scale(.94)}
+.theme:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:640px){nav ul li:nth-child(n+4):not(:last-child){display:none}nav ul a{padding:8px 10px}nav .wrap{padding-left:16px}}
 
 /* Hero */
 .hero{text-align:center;padding:96px 0 96px}
