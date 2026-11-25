@@ -44,7 +44,6 @@ nav ul a:hover{color:var(--text);text-decoration:none;background:rgba(120,120,12
 .theme:hover{transform:scale(1.07)}
 .theme:active{transform:scale(.94)}
 .theme:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:640px){nav ul li:nth-child(n+4):not(:last-child){display:none}nav ul a{padding:8px 10px}nav .wrap{padding-left:16px}}
 
 /* Hero */
 .hero{text-align:center;padding:96px 0 96px}
@@ -115,6 +114,40 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* Mobile */
+nav .brand{white-space:nowrap}
+@media (max-width:640px){
+  body{font-size:16px}
+  nav{top:10px;margin-top:10px;padding:0 12px}
+  nav .wrap{padding:6px 8px 6px 18px}
+  nav ul li:not(:nth-last-child(-n+2)){display:none}
+  nav ul{gap:2px}
+  .hero{padding:48px 0 56px}
+  .avatar{width:104px;height:104px;margin-bottom:22px}
+  .eyebrow{font-size:13px}
+  .hero p.lead{font-size:19px;margin-top:18px}
+  .cta{margin-top:28px;gap:8px}
+  .btn{padding:12px 22px;font-size:16px}
+  section{padding:64px 0}
+  .wrap{padding:0 20px}
+  h2{font-size:32px}
+  .sub{font-size:18px;margin-bottom:32px}
+  .about{gap:28px}
+  .about p{font-size:18px}
+  .stats{gap:10px}
+  .stat{padding:18px 16px;border-radius:18px}
+  .stat b{font-size:28px;white-space:nowrap}
+  .stat span{font-size:13px;display:block;margin-top:4px}
+  .card{padding:24px 22px;border-radius:20px}
+  .card h3{font-size:19px}
+  .tl li{padding:22px 20px;border-radius:20px}
+  .tl h3{font-size:19px}
+  .p{padding:28px 24px;border-radius:24px}
+  .p h3{font-size:26px}
+  .p.big h3{font-size:30px}
+  footer{padding:28px 0 40px}
+}
 </style>
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 </head>
