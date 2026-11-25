@@ -65,7 +65,10 @@ h2{font-size:clamp(32px,5vw,52px);line-height:1.08;font-weight:700;letter-spacin
 .sub{font-size:21px;color:var(--muted);max-width:640px;margin-bottom:56px;line-height:1.35}
 
 /* About */
-.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.about-photo{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--card);box-shadow:0 18px 50px rgba(20,30,60,.14)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.about-text .stats{margin-top:32px}
 .about p{font-size:21px;line-height:1.45;color:var(--text)}
 .about p+p{margin-top:18px;color:var(--muted)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -150,15 +153,18 @@ footer{padding:36px 0 56px;text-align:center;font-size:13px;color:var(--muted);b
     <h2 class="rv">Sobre mí.</h2>
     <p class="sub rv">Identifico oportunidades, resuelvo problemas reales y construyo soluciones escalables.</p>
     <div class="about">
-      <div class="rv">
+      <div class="about-photo rv"><img src="img/agustin-trabajo.webp" alt="Agustín Orellano trabajando frente a su notebook" loading="lazy" width="760" height="950"></div>
+      <div class="about-text rv">
+      <div>
         <p>Soy Business Development Manager en Clash Beneficios. Trabajo en la intersección entre negocio, marketing, producto y tecnología: desde detectar dónde puede crecer una compañía hasta ver la solución publicada.</p>
         <p>Además estudio Marketing Digital en la UAI y diseño y construyo sitios y apps por mi cuenta, usando la IA como herramienta de trabajo para iterar más rápido.</p>
       </div>
-      <div class="stats rv">
+      <div class="stats">
         <div class="stat"><b>2026</b><span>lidero el crecimiento de Clash Beneficios</span></div>
         <div class="stat"><b>4+</b><span>proyectos web y de producto recientes</span></div>
         <div class="stat"><b>Remoto</b><span>trabajo con Comercial, Marketing, Producto y Tecnología</span></div>
         <div class="stat"><b>0 → 1</b><span>de la idea a la solución en producción</span></div>
+      </div>
       </div>
     </div>
   </div>
